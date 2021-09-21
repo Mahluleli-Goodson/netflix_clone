@@ -4,6 +4,7 @@
 
 @layer base {
     body {
-        @apply bg-indigo-900 text-gray-100;
+        @apply text-[14px];
+        @apply bg-gray-900 text-gray-300;
     }
 }

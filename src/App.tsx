@@ -1,11 +1,6 @@
-import React from 'react';
+import React, {FC} from 'react';
+import Home from "./pages/Home/Home";
 
-function App() {
-  return (
-    <div className="App">
-        <h1>Hello Netflix Clone</h1>
-    </div>
-  );
-}
+const App: FC = (): JSX.Element => <Home />;
 
 export default App;
