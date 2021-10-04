@@ -8,7 +8,7 @@ export interface CatItemProps {
 
 const CategoryItem: FC<CatItemProps> = ({title, isActive, Icon}: CatItemProps): JSX.Element => {
     return (
-        <div className="pt-3 px-5 mx-5 flex flex-col justify-center items-center cursor-pointer">
+        <div className="pt-3 sm:px-5 mx-5 flex flex-col justify-center items-center cursor-pointer">
             <span className={`flex ${isActive ? "scale-150 text-white" : "text-gray-500"}`}>
                 {Icon}
                 {title}

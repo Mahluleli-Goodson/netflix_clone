@@ -11,8 +11,9 @@ const sortList: { value: string, title: string }[] = [
 
 const Sortable: FC = (): JSX.Element => {
     return (
-        <section className="flex items-center">
+        <section className="flex flex-col sm:flex-row items-center">
             <span className="mr-6 text-gray-500">Sort By:</span>
+            <span className="h-2" />
             <SmartDropDown options={sortList}/>
         </section>
     );

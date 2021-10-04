@@ -18,10 +18,10 @@ const genres: string[] = ["Action", "Comedy", "Crime", "Horror", "Thrillers", "F
 const Recommended: FC = (): JSX.Element => {
     return (
         <>
-            <div className="border-b-[0.01rem] border-gray-600 xl:mx-40">
+            <div className="border-b-[0.01rem] border-gray-600 lg:mx-40">
                 <CategoriesHeader menuList={recommendedMenu}/>
             </div>
-            <div className="xl:mx-40 py-5 flex items-center">
+            <div className="lg:mx-40 py-5 flex items-center">
                 <Genres list={genres}/>
             </div>
             <div className="w-full px-4">

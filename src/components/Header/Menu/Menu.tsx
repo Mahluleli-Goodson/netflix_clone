@@ -3,7 +3,7 @@ import MenuItem from "./MenuItem";
 
 const Menu:FC = (): JSX.Element => {
   return (
-      <div className="flex items-center">
+      <div className="flex flex-col w-full md:w-auto md:flex-row flex-wrap items-center">
         <MenuItem title="Home" isActive/>
         <MenuItem title="Movies" />
         <MenuItem title="Series" />

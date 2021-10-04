@@ -13,7 +13,7 @@ const CategoriesHeader: FC<CatHeaderProps> = ({menuList}: CatHeaderProps): JSX.E
     });
 
     return (
-        <div className="flex justify-between font-medium pt-8 pb-6">
+        <div className="flex flex-wrap justify-between font-medium pt-8 pb-6">
             {widget}
         </div>
     );

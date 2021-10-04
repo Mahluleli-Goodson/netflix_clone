@@ -7,8 +7,8 @@ import Slider from "../Slider/Slider";
 const Jumbotron: FC = (): JSX.Element => {
     return (
         <Slider>
-            <div className="max-w-[700px] mx-40 mt-60 mb-32 z-[1] text-gray-50">
-                <h1 className="text-5xl font-bold">The Walking Dead</h1>
+            <div className="p-5 max-w-[700px] lg:mx-40 lg:mt-60 lg:mb-32 z-[1] text-gray-50">
+                <h1 className="text-2xl lg:text-5xl font-bold">The Walking Dead</h1>
                 <span className="flex pt-2"><ClockIcon className="w-5 mr-1"/> 2 h 32 min</span>
                 <div className="flex py-5">
                     <span className="mr-5">2018</span> <span className="flex"><StarIcon
@@ -19,10 +19,10 @@ const Jumbotron: FC = (): JSX.Element => {
                     repellendus sapiente. Doloremque, iste, nam? Explicabo ipsa ipsam magni nesciunt porro praesentium
                     quaerat quod unde veniam veritatis!</p>
 
-                <div className="my-5 flex">
-                    <ActionButton title="watch" Icon={<PlayIcon className="w-5"/>} bgColor="bg-red-600"/>
-                    <span className="w-5"/>
-                    <ActionButton title="add list" Icon={<PlusIcon className="w-5"/>} bgColor="bg-black"/>
+                <div className="my-5 flex flex-col sm:flex-row flex-wrap">
+                    <ActionButton title="watch" Icon={<PlayIcon className="w-5"/>} bgColor="bg-red-600" className="max-w-[10rem]"/>
+                    <span className="h-5 sm:w-5"/>
+                    <ActionButton title="add list" Icon={<PlusIcon className="w-5"/>} bgColor="bg-black" className="max-w-[10rem]"/>
                 </div>
             </div>
         </Slider>

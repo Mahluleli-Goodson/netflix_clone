@@ -2,6 +2,7 @@ import {FC} from "react";
 import MovieTrailItem from "./MovieTrailItem";
 import useHorizontalWheeler from "../../hooks/HorizontalWheeler";
 import {ChevronLeftIcon, ChevronRightIcon} from "@heroicons/react/outline";
+import "./styles.css";
 
 const movieList: Array<{ title: string, rating: number, year: number, isLiked?: boolean, cover: string }> = [
     {
@@ -92,12 +93,12 @@ const MoviesTrail: FC<MoviesTrailProps> = ({carousel}: MoviesTrailProps): JSX.El
                 &&
                 <>
                     <div
-                        className="absolute top-0 bottom-0 flex justify-center items-center bg-gradient-to-r from-gray-900"
+                        className="absolute top-0 bottom-0 flex justify-center items-center bg-gradient-to-r from-gray-900 z-[1]"
                         data-role="left-control">
                         <ChevronLeftIcon className="w-8"/>
                     </div>
                     <div
-                        className="absolute top-0 bottom-0 right-0 flex justify-center items-center bg-gradient-to-l from-gray-900"
+                        className="absolute top-0 bottom-0 right-0 flex justify-center items-center bg-gradient-to-l from-gray-900 z-[1]"
                         data-role="right-control">
                         <ChevronRightIcon className="w-8"/>
                     </div>
@@ -105,8 +106,7 @@ const MoviesTrail: FC<MoviesTrailProps> = ({carousel}: MoviesTrailProps): JSX.El
             }
             <div
                 ref={carousel ? wheelRef : null}
-                className={`${carousel ? "overflow-x-scroll scrollbar-hidden flex" : "grid"}`}
-                style={!carousel ? {gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))"} : {}}
+                className={`${carousel ? "overflow-x-scroll scrollbar-hidden flex" : "nc-movies-trail__container-inner"}`}
             >
                 {widget}
             </div>

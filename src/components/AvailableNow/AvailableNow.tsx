@@ -24,10 +24,10 @@ const AvailableNow: FC = (): JSX.Element => {
             <div className="xl:mx-40 py-5 flex items-center">
                 <Genres list={genres}/>
             </div>
-            <div className="xl:mx-40 py-5 flex items-center">
+            <div className="mx-10 xl:mx-40 py-5 flex items-center">
                 <Sortable/>
             </div>
-            <div className="w-full px-5">
+            <div className="w-full md:px-5">
                 <MoviesTrail/>
             </div>
         </>
