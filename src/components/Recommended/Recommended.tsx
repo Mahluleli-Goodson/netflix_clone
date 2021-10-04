@@ -21,10 +21,10 @@ const Recommended: FC = (): JSX.Element => {
             <div className="border-b-[0.01rem] border-gray-600 xl:mx-40">
                 <CategoriesHeader menuList={recommendedMenu}/>
             </div>
-            <div className="border-1 border-red-500 xl:mx-40 py-5 flex items-center">
+            <div className="xl:mx-40 py-5 flex items-center">
                 <Genres list={genres}/>
             </div>
-            <div className="w-full border-2 border-red-500">
+            <div className="w-full px-4">
                 <MoviesTrail carousel />
             </div>
         </>

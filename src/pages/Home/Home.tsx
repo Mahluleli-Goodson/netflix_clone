@@ -10,6 +10,7 @@ const Home: FC = (): JSX.Element => {
             <Header/>
             <Jumbotron/>
             <Recommended/>
+            <div className="h-20"/>
             <AvailableNow/>
             <div className="h-80"/>
         </>
