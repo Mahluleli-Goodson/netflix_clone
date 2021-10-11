@@ -6,7 +6,7 @@ import Slider from "../Slider/Slider";
 
 const Jumbotron: FC = (): JSX.Element => {
     return (
-        <Slider>
+        <Slider image={"https://www.kolpaper.com/wp-content/uploads/2020/03/walking-dead-wallpaper.jpg"}>
             <div className="p-5 max-w-[700px] lg:mx-40 lg:mt-60 lg:mb-32 z-[1] text-gray-50">
                 <h1 className="text-2xl lg:text-5xl font-bold">The Walking Dead</h1>
                 <span className="flex pt-2"><ClockIcon className="w-5 mr-1"/> 2 h 32 min</span>
