@@ -21,7 +21,7 @@ const Slider: FC<IProps> = ({children}: IProps): JSX.Element => {
             style={{backgroundImage: `url(${image})`}}>
             <div className="absolute w-[100%] h-[100%] bg-black opacity-40"/>
             {children}
-            <div className="mb-5">
+            <div className="mb-5 absolute w-full bottom-1">
                 <SliderIndicator/>
             </div>
             <div className="py-10 absolute w-full bg-gradient-to-t from-gray-900 to-transparent bottom-0"/>

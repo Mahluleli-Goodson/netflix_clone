@@ -22,7 +22,7 @@ const Header: FC = (): JSX.Element => {
             md:items-center 
             lg:px-10 
             border-b-[0.001em] 
-            border-gray-900 
+            border-gray-600
             lg:absolute 
             w-[100%] 
             z-10 

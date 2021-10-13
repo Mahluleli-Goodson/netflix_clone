@@ -2,7 +2,7 @@ import {FC} from "react";
 import MovieTrailItem from "./MovieTrailItem";
 import useHorizontalWheeler from "../../hooks/HorizontalWheeler";
 import {ChevronLeftIcon, ChevronRightIcon} from "@heroicons/react/outline";
-import "./styles.css";
+import "./styles.scss";
 import {IMovie} from "../../interfaces/IMovie";
 import {environment} from "../../config/env";
 
@@ -43,7 +43,7 @@ const MoviesTrail: FC<IMoviesTrailProps> = ({carousel, movieList}: IMoviesTrailP
             }
             <div
                 ref={carousel ? wheelRef : null}
-                className={`${carousel ? "overflow-x-scroll scrollbar-hidden flex" : "nc-movies-trail__container-inner"}`}
+                className={`${carousel ? "overflow-x-scroll scrollbar-hidden flex pt-4" : "nc-movies-trail__container-inner"}`}
             >
                 {widget ?? ""}
             </div>

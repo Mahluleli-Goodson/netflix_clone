@@ -10,8 +10,8 @@ const ActionButton: FC<IProps> = ({Icon, title, bgColor, className, ...rest}: IP
     return (
         <>
             <div
-                className={`${bgColor} inline-flex min-w-32 px-5 py-3 rounded-full font-medium cursor-pointer ${className}`} {...rest}>
-                {Icon} <span className="uppercase ml-2">{title}</span>
+                className={`${bgColor} inline-flex min-w-32 px-5 py-3 rounded-full cursor-pointer items-center ${className}`} {...rest}>
+                {Icon} <span className="text-xs md:text-md uppercase ml-2">{title}</span>
             </div>
         </>
     );

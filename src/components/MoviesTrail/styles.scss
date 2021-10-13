@@ -1,0 +1,15 @@
+
+.nc-movies-trail__container-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  place-items: center;
+  align-items: baseline;
+
+  @media screen and (max-width: 360px) {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  }
+
+  @media screen and (max-width: 775px) {
+    grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  }
+}
