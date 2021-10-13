@@ -9,7 +9,7 @@ import React, {
     useEffect,
     useState
 } from 'react';
-import useJumbotronData from "../hooks/JumbotronData";
+import useFetchJumbotronContent from "../hooks/FetchJumbotronContent";
 import useSliderIntervalCounter from "../hooks/SliderIntervalCounter";
 import {IMovie} from "../interfaces/IMovie";
 
@@ -33,7 +33,7 @@ const SliderProvider: FC<ISliderProvider> = ({children}: ISliderProvider) => {
 
     const [currentSlideIndex, setCurrentSlideIndex]: [number, Dispatch<SetStateAction<any>>] = useState(0);
     const [currentContent, setCurrentContent]: [ISliderContent | undefined, Dispatch<SetStateAction<any>>] = useState();
-    const {sliderContent, error} = useJumbotronData();
+    const {sliderContent, error} = useFetchJumbotronContent();
     const {count, setCount: setIntervalCounter} = useSliderIntervalCounter(3);
 
     const nextSlide = useCallback((index: number): void => {

@@ -5,6 +5,7 @@ import CategoriesHeader from "../CategoriesHeader/CategoriesHeader";
 import Genres from "../Genres/Genres";
 import MoviesTrail from "../MoviesTrail/MoviesTrail";
 import Sortable from "../Sortable/Sortable";
+import useFetchMovieListContent from "../../hooks/FetchMovieListContent";
 
 const availableNowMenu: CatItemProps[] = [
     {Icon: <FilmIcon className="w-5 mx-2"/>, title: "Movies", isActive: true},
@@ -16,6 +17,9 @@ const availableNowMenu: CatItemProps[] = [
 const genres: string[] = ["Action", "Adventure", "Animation", "Biography", "Thrillers", "Comedy", "Fantasy", "Science-Fiction", "Drama", "Romance", "Western", "Historical", "Musicals", "Crime", "War"];
 
 const AvailableNow: FC = (): JSX.Element => {
+
+    const {listContent} = useFetchMovieListContent();
+
     return (
         <>
             <div className="border-b-[0.01rem] border-gray-600 xl:mx-40">
@@ -28,7 +32,7 @@ const AvailableNow: FC = (): JSX.Element => {
                 <Sortable/>
             </div>
             <div className="w-full md:px-5">
-                <MoviesTrail/>
+                <MoviesTrail movieList={listContent}/>
             </div>
         </>
 

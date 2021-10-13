@@ -3,86 +3,23 @@ import MovieTrailItem from "./MovieTrailItem";
 import useHorizontalWheeler from "../../hooks/HorizontalWheeler";
 import {ChevronLeftIcon, ChevronRightIcon} from "@heroicons/react/outline";
 import "./styles.css";
+import {IMovie} from "../../interfaces/IMovie";
+import {environment} from "../../config/env";
 
-const movieList: Array<{ title: string, rating: number, year: number, isLiked?: boolean, cover: string }> = [
-    {
-        title: "Jurassic World: Fallen Kingdom",
-        year: 2018,
-        rating: 8.9,
-        isLiked: true,
-        cover: "https://i.pinimg.com/originals/f1/70/cf/f170cf885a6373070db4a8eeb7c1f036.jpg"
-    },
-    {
-        title: "Jurassic World: Fallen Kingdom",
-        year: 2018,
-        rating: 8.9,
-        cover: "https://i.pinimg.com/originals/f1/70/cf/f170cf885a6373070db4a8eeb7c1f036.jpg"
-    },
-    {
-        title: "Jurassic World: Fallen Kingdom",
-        year: 2018,
-        rating: 8.9,
-        isLiked: true,
-        cover: "https://i.pinimg.com/originals/f1/70/cf/f170cf885a6373070db4a8eeb7c1f036.jpg"
-    },
-    {
-        title: "Jurassic World: Fallen Kingdom",
-        year: 2018,
-        rating: 8.9,
-        cover: "https://i.pinimg.com/originals/f1/70/cf/f170cf885a6373070db4a8eeb7c1f036.jpg"
-    },
-    {
-        title: "Jurassic World: Fallen Kingdom",
-        year: 2018,
-        rating: 8.9,
-        isLiked: true,
-        cover: "https://i.pinimg.com/originals/f1/70/cf/f170cf885a6373070db4a8eeb7c1f036.jpg"
-    },
-    {
-        title: "Jurassic World: Fallen Kingdom",
-        year: 2018,
-        rating: 8.9,
-        isLiked: true,
-        cover: "https://i.pinimg.com/originals/f1/70/cf/f170cf885a6373070db4a8eeb7c1f036.jpg"
-    },
-    {
-        title: "Jurassic World: Fallen Kingdom",
-        year: 2018,
-        rating: 8.9,
-        cover: "https://i.pinimg.com/originals/f1/70/cf/f170cf885a6373070db4a8eeb7c1f036.jpg"
-    },
-    {
-        title: "Jurassic World: Fallen Kingdom",
-        year: 2018,
-        rating: 8.9,
-        isLiked: true,
-        cover: "https://i.pinimg.com/originals/f1/70/cf/f170cf885a6373070db4a8eeb7c1f036.jpg"
-    },
-    {
-        title: "Jurassic World: Fallen Kingdom",
-        year: 2018,
-        rating: 8.9,
-        cover: "https://i.pinimg.com/originals/f1/70/cf/f170cf885a6373070db4a8eeb7c1f036.jpg"
-    },
-    {
-        title: "Jurassic World: Fallen Kingdom",
-        year: 2018,
-        rating: 8.9,
-        isLiked: true,
-        cover: "https://i.pinimg.com/originals/f1/70/cf/f170cf885a6373070db4a8eeb7c1f036.jpg"
-    },
-];
-
-interface MoviesTrailProps {
+interface IMoviesTrailProps {
     carousel?: boolean;
+    movieList: IMovie[] | undefined
 }
 
-const MoviesTrail: FC<MoviesTrailProps> = ({carousel}: MoviesTrailProps): JSX.Element => {
+const MoviesTrail: FC<IMoviesTrailProps> = ({carousel, movieList}: IMoviesTrailProps): JSX.Element => {
 
     const {wheelRef} = useHorizontalWheeler();
 
-    const widget: JSX.Element[] = movieList.map((movie, idx) => {
-        const {title, rating, year, isLiked, cover} = movie;
+    const widget: JSX.Element[] | undefined = movieList?.map((movie, idx) => {
+        const {title, vote_average: rating, release_date, poster_path} = movie;
+        const year = new Date(release_date ?? "2021").getFullYear();
+        const cover = `${environment.IMAGE_PATH.W500}/${poster_path}`;
+        const isLiked = false;
         return <MovieTrailItem key={idx} cover={cover} title={title} rating={rating} year={year} isLiked={isLiked}/>;
     });
 
@@ -108,7 +45,7 @@ const MoviesTrail: FC<MoviesTrailProps> = ({carousel}: MoviesTrailProps): JSX.El
                 ref={carousel ? wheelRef : null}
                 className={`${carousel ? "overflow-x-scroll scrollbar-hidden flex" : "nc-movies-trail__container-inner"}`}
             >
-                {widget}
+                {widget ?? ""}
             </div>
         </section>
     );

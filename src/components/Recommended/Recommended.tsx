@@ -5,6 +5,7 @@ import {PlusIcon, TrendingUpIcon} from "@heroicons/react/outline";
 import {FireIcon, StarIcon} from "@heroicons/react/solid";
 import Genres from "../Genres/Genres";
 import MoviesTrail from "../MoviesTrail/MoviesTrail";
+import useFetchMovieCarouselContent from "../../hooks/FetchMovieCarouselContent";
 
 const recommendedMenu: CatItemProps[] = [
     {Icon: <TrendingUpIcon className="w-5 mx-2"/>, title: "Trending", isActive: true},
@@ -16,6 +17,9 @@ const recommendedMenu: CatItemProps[] = [
 const genres: string[] = ["Action", "Comedy", "Crime", "Horror", "Thrillers", "Fantasy", "Science-Fiction", "Drama", "Romance", "Western", "Historical", "Musicals", "Animation", "War"];
 
 const Recommended: FC = (): JSX.Element => {
+
+    const {carouselContent} = useFetchMovieCarouselContent();
+
     return (
         <>
             <div className="border-b-[0.01rem] border-gray-600 lg:mx-40">
@@ -25,7 +29,7 @@ const Recommended: FC = (): JSX.Element => {
                 <Genres list={genres}/>
             </div>
             <div className="w-full px-4">
-                <MoviesTrail carousel />
+                <MoviesTrail carousel movieList={carouselContent}/>
             </div>
         </>
 

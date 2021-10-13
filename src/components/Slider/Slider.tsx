@@ -1,6 +1,6 @@
 import {FC, useContext} from "react";
 import SliderIndicator from "../SliderIndicator/SliderIndicator";
-import {environment} from "../../Env";
+import {environment} from "../../config/env";
 import {SliderContext} from "../../contexts/SliderContext";
 
 interface IProps {
