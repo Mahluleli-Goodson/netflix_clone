@@ -11,7 +11,7 @@ const useFetchJumbotronContent = () => {
     const fetchContent = () => {
         try {
             if (!apiResponse) {
-                console.error("useFetchJumbotronContent::fetchPopular FAILED:", apiResponse);
+                console.debug("[useFetchJumbotronContent] :: Initial hook load");
                 return;
             }
 

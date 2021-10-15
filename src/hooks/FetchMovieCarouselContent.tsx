@@ -11,7 +11,7 @@ const useFetchMovieCarouselContent = () => {
     const fetchContent = () => {
         try {
             if (!apiResponse) {
-                console.error("useFetchMovieCarouselContent::fetchPopular FAILED:", apiResponse);
+                console.debug("[useFetchMovieCarouselContent] :: Initial hook load");
                 return;
             }
             const {results}: { results: IMovie[] } = apiResponse.data;

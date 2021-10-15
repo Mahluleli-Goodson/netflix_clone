@@ -2,10 +2,16 @@ import {Dispatch, SetStateAction, useEffect, useState} from 'react';
 import axios, {AxiosResponse} from "axios";
 import {environment} from "../config/env";
 
-const useFetchTvContent = (url: string) => {
+const useFetchTvContent = (url: string | undefined) => {
     const [apiResponse, setApiResponse]: [AxiosResponse<never> | undefined, Dispatch<SetStateAction<any>>] = useState();
 
     const apiCall = async () => {
+
+        if (url === undefined) {
+            console.log("[undefined] URL rejected");
+            return;
+        }
+
         const resp: AxiosResponse<never> = await axios.get(
             url,
             {

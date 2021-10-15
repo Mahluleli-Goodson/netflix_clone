@@ -5,7 +5,8 @@ import {API_TOKEN} from "./local";
 const IMAGE_URL: string = "https://image.tmdb.org/t/p";
 const MOVIES_URL: string = "https://api.themoviedb.org/3/movie";
 export const environment = {
-    API_TOKEN: API_TOKEN,
+    API_TOKEN,
+    MOVIES_URL,
     IMAGE_PATH: {
         BASE: IMAGE_URL,
         ORIGINAL: `${IMAGE_URL}/original`,

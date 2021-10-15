@@ -6,6 +6,7 @@ import ActionButton from "../ActionButton/ActionButton";
 import {SliderContext} from "../../contexts/SliderContext";
 import {IMovie} from "../../interfaces/IMovie";
 import UIHelper from "../../helpers/UIHelper";
+import usePlayerModalHook from "../../hooks/PlayerModalHook";
 
 interface ISliderContext {
     currentContent: IMovie
@@ -13,8 +14,13 @@ interface ISliderContext {
 
 const JumbotronContent = () => {
     const {currentContent}: ISliderContext = useContext(SliderContext);
-    let {title, release_date, vote_average, overview} = currentContent ?? {};
+    let {title, release_date, vote_average, overview, id: showId} = currentContent ?? {};
     const overviewWidget = UIHelper.makeOverview(overview);
+    const {openPlayableItem} = usePlayerModalHook();
+
+    const onWatch = (show: number) => {
+        openPlayableItem(show);
+    }
 
     return (
         <div className="p-5 max-w-[700px] md:h-[400px] lg:mx-40 lg:mt-60 lg:mb-10 z-[1] text-gray-50">
@@ -35,6 +41,7 @@ const JumbotronContent = () => {
                     Icon={<PlayIcon className="w-5"/>}
                     bgColor="bg-red-600"
                     className="max-w-[8rem] md:max-w-[10rem]"
+                    onClick={() => onWatch(showId)}
                 />
                 <span className="h-5 sm:w-5"/>
                 <ActionButton
