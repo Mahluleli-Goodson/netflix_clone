@@ -8,10 +8,10 @@ import MoviesTrail from "../MoviesTrail/MoviesTrail";
 import useFetchMovieCarouselContent from "../../hooks/FetchMovieCarouselContent";
 
 const recommendedMenu: CatItemProps[] = [
-    {Icon: <TrendingUpIcon className="w-5 mx-2"/>, title: "Trending", isActive: true},
-    {Icon: <FireIcon className="w-5 mx-2"/>, title: "Popular"},
-    {Icon: <StarIcon className="w-5 mx-2"/>, title: "Premier"},
-    {Icon: <PlusIcon className="w-5 mx-2"/>, title: "Recently Added"},
+    {Icon: <TrendingUpIcon className="w-5 mx-2 self-start"/>, title: "Trending", isActive: true},
+    {Icon: <FireIcon className="w-5 mx-2 self-start"/>, title: "Popular"},
+    {Icon: <StarIcon className="w-5 mx-2 self-start"/>, title: "Premier"},
+    {Icon: <PlusIcon className="w-5 mx-2 self-start"/>, title: "Recently Added"},
 ];
 
 const genres: string[] = ["Action", "Comedy", "Crime", "Horror", "Thrillers", "Fantasy", "Science-Fiction", "Drama", "Romance", "Western", "Historical", "Musicals", "Animation", "War"];

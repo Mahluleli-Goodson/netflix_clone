@@ -27,7 +27,7 @@ const PlayerModal = () => {
             <div className="min-h-[500px] max-w-[900px] w-full mx-1 sm:mx-5 bg-black rounded-md overflow-hidden">
                 <div className="w-full overflow-y-hidden relative">
                     <iframe src={videoURL} frameBorder={0} title={title}
-                            className="nc-player-modal__iframe"/>
+                            className="nc-player-modal__iframe" allowFullScreen={false}/>
                     <div className="absolute bottom-0 h-[50px] bg-gradient-to-t from-black w-full"/>
                     <XCircleIcon onClick={onCloseModal}
                                  className="absolute w-10 right-2 top-2 text-red-600 shadow-2xl cursor-pointer"/>
@@ -56,7 +56,7 @@ const PlayerModal = () => {
                         <div className="flex border-t-[0.001em] border-gray-900 mt-4 pt-1 justify-end items-center">
                             <span className="mr-2 text-lg">{new Date(release_date ?? "2021").getFullYear()}</span>
                             <span className="dot-separator h-1 w-1 bg-red-600 rounded-full mr-2"/>
-                            <span className="flex text-lg"><StarIcon className="w-5 text-yellow-500 mr-1"/>
+                            <span className="flex text-lg"><StarIcon className="w-5 text-yellow-500 mr-1 self-center"/>
                                 {vote_average} / 10
                             </span>
                         </div>

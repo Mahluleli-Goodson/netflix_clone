@@ -8,10 +8,10 @@ import Sortable from "../Sortable/Sortable";
 import useFetchMovieListContent from "../../hooks/FetchMovieListContent";
 
 const availableNowMenu: CatItemProps[] = [
-    {Icon: <FilmIcon className="w-5 mx-2"/>, title: "Movies", isActive: true},
-    {Icon: <VideoCameraIcon className="w-5 mx-2"/>, title: "Series"},
-    {Icon: <CheckIcon className="w-5 mx-2"/>, title: "Original Series"},
-    {Icon: <SearchIcon className="w-5 mx-2"/>, title: "Search"},
+    {Icon: <FilmIcon className="w-5 mx-2 self-start"/>, title: "Movies", isActive: true},
+    {Icon: <VideoCameraIcon className="w-5 mx-2 self-start"/>, title: "Series"},
+    {Icon: <CheckIcon className="w-5 mx-2 self-start"/>, title: "Original Series"},
+    {Icon: <SearchIcon className="w-5 mx-2 self-start"/>, title: "Search"},
 ];
 
 const genres: string[] = ["Action", "Adventure", "Animation", "Biography", "Thrillers", "Comedy", "Fantasy", "Science-Fiction", "Drama", "Romance", "Western", "Historical", "Musicals", "Crime", "War"];

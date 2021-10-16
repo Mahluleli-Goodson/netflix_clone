@@ -12,7 +12,7 @@ const MenuItem: FC<IProps> = ({title, isActive, isSelect}: IProps): JSX.Element 
         <div className="w-full pt-3 px-5 md:mx-5 md:w-auto flex flex-col justify-center items-center cursor-pointer">
             <span className={`${isActive ? "text-white text-[1rem]" : "text-gray-200"} flex`}>
                 {title}
-                {isSelect && <ChevronDownIcon className="w-4 ml-2"/>}
+                {isSelect && <ChevronDownIcon className="w-4 ml-2 self-start"/>}
             </span>
             <span className={`${isActive && "bg-red-500"} w-2 h-2 rounded-full mt-1`}/>
         </div>

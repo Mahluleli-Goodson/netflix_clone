@@ -56,7 +56,7 @@ const MovieTrailItem: FC<MovieItemProps> = (
             <div className="flex flex-col py-2">
                 <span className="flex justify-between">
                     <span className="flex">
-                        <StarIcon className="w-4 text-yellow-500 mr-1"/> <span
+                        <StarIcon className="w-4 text-yellow-500 mr-1 self-start"/> <span
                         className="text-yellow-500">{(rating).toFixed(1)}</span>
                     </span>
                     <span>{year}</span>

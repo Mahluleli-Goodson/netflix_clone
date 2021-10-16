@@ -26,9 +26,9 @@ const SmartDropDown: FC<ISmartDropDown> = ({options}: ISmartDropDown) => {
     ));
 
     return (
-        <div className="relative min-w-[100px] py-2 px-4 rounded-full bg-red-600 group" role="button" tabIndex={0}>
+        <div className="relative min-w-[100px] py-2 px-4 rounded-full bg-red-600 group outline-none" role="button" tabIndex={0}>
             <div className="flex justify-between text-center">
-                <span>{selected ?? "Select"}</span> <ChevronDownIcon className="ml-2 w-4"/>
+                <span>{selected ?? "Select"}</span> <ChevronDownIcon className="ml-2 w-4 self-start"/>
             </div>
             {
                 options

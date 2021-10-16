@@ -44,14 +44,14 @@ const MoviesTrail: FC<IMoviesTrailProps> = (
                 &&
                 <>
                     <div
-                        className={`absolute top-0 bottom-0 flex justify-center items-center bg-gradient-to-r z-[1] ${chevronBlend}`}
+                        className={`absolute top-0 bottom-0 -left-1 flex justify-center items-center bg-gradient-to-r z-[1] ${chevronBlend}`}
                         data-role="left-control">
-                        <ChevronLeftIcon className="w-8"/>
+                        <ChevronLeftIcon className="w-8 self-center"/>
                     </div>
                     <div
                         className={`absolute top-0 bottom-0 right-0 flex justify-center items-center bg-gradient-to-l z-[1] ${chevronBlend}`}
                         data-role="right-control">
-                        <ChevronRightIcon className="w-8"/>
+                        <ChevronRightIcon className="w-8 self-center"/>
                     </div>
                 </>
             }

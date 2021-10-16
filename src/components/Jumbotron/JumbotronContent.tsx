@@ -24,10 +24,10 @@ const JumbotronContent = () => {
     return (
         <div className="p-5 max-w-[700px] md:h-[400px] lg:mx-40 lg:mt-60 lg:mb-10 z-[1] text-gray-50">
             <h1 className="text-2xl lg:text-5xl font-bold">{title}</h1>
-            <span className="flex pt-2"><ClockIcon className="w-5 mr-1"/> 2 h 32 min</span>
+            <span className="flex pt-2"><ClockIcon className="w-5 mr-1 self-start"/> 2 h 32 min</span>
             <div className="flex py-5">
                 <span className="mr-5">{new Date(release_date ?? "2021").getFullYear()}</span>
-                <span className="flex"><StarIcon className="w-5 text-yellow-500 mr-1"/>
+                <span className="flex"><StarIcon className="w-5 text-yellow-500 mr-1 self-start"/>
                     {vote_average}
                 </span>
             </div>
