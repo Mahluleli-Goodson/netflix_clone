@@ -2,8 +2,10 @@ import "./styles.scss";
 import {FC} from "react";
 import {StarIcon} from "@heroicons/react/solid";
 import {PlayIcon} from "@heroicons/react/outline";
+import usePlayerModalHook from "../../hooks/PlayerModalHook";
 
 interface MovieItemProps {
+    showId: number;
     cover: string;
     title: string;
     rating: number;
@@ -20,15 +22,26 @@ interface MovieItemProps {
  * @param isLiked
  * @param cover
  * @param orientation
+ * @param showId
  * @constructor
  */
-const MovieTrailItem: FC<MovieItemProps> = ({title, rating, year, isLiked, cover, orientation}: MovieItemProps): JSX.Element => {
+const MovieTrailItem: FC<MovieItemProps> = (
+    {title, rating, year, isLiked, cover, orientation, showId}: MovieItemProps
+): JSX.Element => {
+
     const isLandscape: boolean = (orientation?.toLowerCase() === "landscape");
+    const {openPlayableItem} = usePlayerModalHook();
+
+    const onWatch = (show: number) => {
+        openPlayableItem(show);
+    }
 
     return (
         <div className={`group cursor-pointer relative mx-2 ${isLandscape ? "min-w-[13rem] h-auto" : "w-32 md:w-44"}`}>
             <div
-                className={`overflow-hidden transition-all rounded-md relative ${isLandscape ? "h-28" : "w-32 h-44 md:w-44 md:h-64 md:group-hover:overflow-visible"}`}>
+                className={`overflow-hidden transition-all rounded-md relative ${isLandscape ? "h-28" : "w-32 h-44 md:w-44 md:h-64 md:group-hover:overflow-visible"}`}
+                onClick={() => onWatch(showId)}
+            >
                 <div
                     className={isLandscape ? "" : "nc-movie-trail-item__cover-container"}>
                     <img

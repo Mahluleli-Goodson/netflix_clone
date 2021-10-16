@@ -5,8 +5,8 @@ import {PlayIcon, PlusIcon, StarIcon} from "@heroicons/react/solid";
 import ActionButton from "../ActionButton/ActionButton";
 import {SliderContext} from "../../contexts/SliderContext";
 import {IMovie} from "../../interfaces/IMovie";
-import UIHelper from "../../helpers/UIHelper";
 import usePlayerModalHook from "../../hooks/PlayerModalHook";
+import Overview from "./Overview";
 
 interface ISliderContext {
     currentContent: IMovie
@@ -15,7 +15,6 @@ interface ISliderContext {
 const JumbotronContent = () => {
     const {currentContent}: ISliderContext = useContext(SliderContext);
     let {title, release_date, vote_average, overview, id: showId} = currentContent ?? {};
-    const overviewWidget = UIHelper.makeOverview(overview);
     const {openPlayableItem} = usePlayerModalHook();
 
     const onWatch = (show: number) => {
@@ -33,7 +32,7 @@ const JumbotronContent = () => {
                 </span>
             </div>
 
-            <section className="md:text-[1.2rem] font-light transition-all">{overviewWidget}</section>
+            <Overview overview={overview} onWatch={onWatch} showId={showId}/>
 
             <div className="my-5 flex flex-col sm:flex-row flex-wrap">
                 <ActionButton

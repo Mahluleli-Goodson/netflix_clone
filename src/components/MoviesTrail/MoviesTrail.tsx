@@ -13,17 +13,28 @@ interface IMoviesTrailProps {
     chevronBlend?: string; // a tailwindcss gradient class [from-xxx]
 }
 
-const MoviesTrail: FC<IMoviesTrailProps> = ({carousel, movieList, coverOrientation, chevronBlend = "from-gray-900"}: IMoviesTrailProps): JSX.Element => {
+const MoviesTrail: FC<IMoviesTrailProps> = (
+    {carousel, movieList, coverOrientation, chevronBlend = "from-gray-900"}: IMoviesTrailProps
+): JSX.Element => {
 
     const {wheelRef} = useHorizontalWheeler();
     const isLandscape: boolean = (coverOrientation?.toLowerCase() === "landscape");
 
     const widget: JSX.Element[] | undefined = movieList?.map((movie, idx) => {
-        const {title, vote_average: rating, release_date, poster_path, backdrop_path} = movie;
+        const {title, vote_average: rating, release_date, poster_path, backdrop_path, id} = movie;
         const year = new Date(release_date ?? "2021").getFullYear();
-        const cover = `${environment.IMAGE_PATH.W500}/${ isLandscape ? backdrop_path : poster_path}`;
+        const cover = `${environment.IMAGE_PATH.W500}/${isLandscape ? backdrop_path : poster_path}`;
         const isLiked = false;
-        return <MovieTrailItem key={idx} cover={cover} orientation={coverOrientation} title={title} rating={rating} year={year} isLiked={isLiked}/>;
+        return <MovieTrailItem
+            key={idx}
+            cover={cover}
+            orientation={coverOrientation}
+            title={title}
+            rating={rating}
+            year={year}
+            isLiked={isLiked}
+            showId={id}
+        />;
     });
 
     return (

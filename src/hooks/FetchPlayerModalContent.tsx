@@ -18,7 +18,7 @@ const useFetchPlayerModalContent = (mediaId: number) => {
         setVideoURL(undefined);
 
         const desiredList: IMovieVideo[] = videoList?.filter((item, idx) => {
-            return (item.type.toLowerCase() === "trailer" && item.size >= 720 && item.site.toLowerCase() === "youtube");
+            return (item.type.toLowerCase() === "trailer" && item.site.toLowerCase() === "youtube");
         }).sort((a, b) => b.size - a.size);
 
         if (desiredList.length > 0) {
