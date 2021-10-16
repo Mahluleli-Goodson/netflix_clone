@@ -5,6 +5,7 @@ const Modal: FC = ({children}) => {
     return (
         <ModalOverlay>
             {children}
+            <div className="y-spacer h-10"/>
         </ModalOverlay>
     );
 };

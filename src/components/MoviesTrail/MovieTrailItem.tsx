@@ -1,3 +1,4 @@
+import "./styles.scss";
 import {FC} from "react";
 import {StarIcon} from "@heroicons/react/solid";
 import {PlayIcon} from "@heroicons/react/outline";
@@ -8,6 +9,7 @@ interface MovieItemProps {
     rating: number;
     year: number;
     isLiked?: boolean;
+    orientation?: string; // portrait [default] | landscape
 }
 
 /**
@@ -17,17 +19,20 @@ interface MovieItemProps {
  * @param year
  * @param isLiked
  * @param cover
+ * @param orientation
  * @constructor
  */
-const MovieTrailItem: FC<MovieItemProps> = ({title, rating, year, isLiked, cover}: MovieItemProps): JSX.Element => {
+const MovieTrailItem: FC<MovieItemProps> = ({title, rating, year, isLiked, cover, orientation}: MovieItemProps): JSX.Element => {
+    const isLandscape: boolean = (orientation?.toLowerCase() === "landscape");
+
     return (
-        <div className="mx-2 w-32 md:w-44 group cursor-pointer relative">
+        <div className={`group cursor-pointer relative mx-2 ${isLandscape ? "min-w-[13rem] h-auto" : "w-32 md:w-44"}`}>
             <div
-                className="w-32 h-44 md:w-44 md:h-64 overflow-hidden transition-all rounded-md relative md:group-hover:overflow-visible">
+                className={`overflow-hidden transition-all rounded-md relative ${isLandscape ? "h-28" : "w-32 h-44 md:w-44 md:h-64 md:group-hover:overflow-visible"}`}>
                 <div
-                    className="md:h-64 md:w-44 relative rounded-md overflow-hidden transition-all delay-75 left-0 top-0 md:group-hover:shadow-lg md:group-hover:h-80 md:group-hover:w-56 md:group-hover:z-10 md:group-hover:top-[-5%] md:group-hover:left-[-13%]">
+                    className={isLandscape ? "" : "nc-movie-trail-item__cover-container"}>
                     <img
-                        className="rounded-md"
+                        className="rounded-md w-full h-full"
                         src={cover}
                         alt={title}
                     />
@@ -39,7 +44,7 @@ const MovieTrailItem: FC<MovieItemProps> = ({title, rating, year, isLiked, cover
                 <span className="flex justify-between">
                     <span className="flex">
                         <StarIcon className="w-4 text-yellow-500 mr-1"/> <span
-                        className="text-yellow-500">{rating}</span>
+                        className="text-yellow-500">{(rating).toFixed(1)}</span>
                     </span>
                     <span>{year}</span>
                 </span>
