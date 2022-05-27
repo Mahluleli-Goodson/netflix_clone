@@ -15,14 +15,17 @@
 }
 
 .nc-movie-trail-item__cover-container {
-  @apply md:h-64 md:w-44
-  relative rounded-md
-  overflow-hidden transition-all
-  delay-75 left-0 top-0
+  @apply md:h-64
+  md:w-44
+  relative
+  rounded-md
+  overflow-hidden
+  transition-all
+  delay-75
+  left-0
+  top-0
   md:group-hover:shadow-lg
   md:group-hover:h-80
   md:group-hover:w-56
-  md:group-hover:z-10
-  md:group-hover:top-[-5%]
-  md:group-hover:left-[-13%]
+  md:group-hover:z-10;
 }

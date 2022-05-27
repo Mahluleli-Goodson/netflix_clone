@@ -43,7 +43,7 @@ const MovieTrailItem: FC<MovieItemProps> = (
                 onClick={() => onWatch(showId)}
             >
                 <div
-                    className={isLandscape ? "" : "nc-movie-trail-item__cover-container"}>
+                    className={isLandscape ? "" : "nc-movie-trail-item__cover-container md:group-hover:top-[-5%] md:group-hover:left-[-13%]"}>
                     <img
                         className="rounded-md w-full h-full"
                         src={cover}
